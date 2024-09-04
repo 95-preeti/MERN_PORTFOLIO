@@ -180,14 +180,14 @@ export const getUser = () => async (dispatch) => {
     dispatch(userSlice.actions.updateProfileRequest());
     try {
       const {data} = await axios.put(
-        "http://localhost:4000/api/v1/user/me",
+        "http://localhost:4000/api/v1/user/update/me",
         newData,
         {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         }
       );
-      dispatch(userSlice.actions.updateProfileSuccess(response.data.message));
+      dispatch(userSlice.actions.updateProfileSuccess(data.message));
       dispatch(userSlice.actions.clearAllErrors());
     } catch (error) {
       dispatch(

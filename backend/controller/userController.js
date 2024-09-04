@@ -46,7 +46,7 @@ export const register = catchAsyncErrors(async(req,res,next) =>{
     }
 
 const {
-    fullname,
+    fullName,
     email,
     phone,
     aboutMe,
@@ -57,7 +57,7 @@ const {
     linkedInURL, 
 } = req.body;
 const user =await User.create({
-    fullname,
+    fullName,
     email,
     phone,
     aboutMe,
